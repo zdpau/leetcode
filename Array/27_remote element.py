@@ -8,11 +8,11 @@ from __future__ import print_function
 #
 
 class Solution:
-    # @param    A       a list of integers
-    # @param    elem    an integer, value need to be removed
+    # @param    A       a list of integers　列表
+    # @param    elem    an integer, value need to be removed　需要删除的那个数
     # @return an integer
     def removeElement(self, A, elem):
-        i, last = 0, len(A) - 1
+        i, last = 0, len(A) - 1 # 定义两个指针
         while i <= last:
             if A[i] == elem:
                 A[i], A[last] = A[last], A[i]
