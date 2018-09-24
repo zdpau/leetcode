@@ -5,21 +5,21 @@ from __future__ import print_function
 # Given an array and a value, remove all instances of that value in place and return the new length.
 #
 # The order of elements can be changed. It doesn't matter what you leave beyond the new length.
-#
+# 定义两个指针，一个从-1开始，一个从0开始，依次遍历。
 
 class Solution:
     # @param    A       a list of integers　列表
     # @param    elem    an integer, value need to be removed　需要删除的那个数
     # @return an integer
-    def removeElement(self, A, elem):
-        i, last = 0, len(A) - 1 # 定义两个指针
-        while i <= last:
-            if A[i] == elem:
-                A[i], A[last] = A[last], A[i]
-                last -= 1
-            else:
-                i += 1
-        return last + 1
-
-if __name__ == "__main__":
-    print(Solution().removeElement([1, 2, 3, 4, 5, 2, 2], 2))
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        slow = -1
+        for i in xrange(0, len(nums)):
+            if nums[i] != val:
+                slow += 1
+                nums[slow] = nums[i]
+        return slow + 1
