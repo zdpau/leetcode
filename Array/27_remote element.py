@@ -9,7 +9,8 @@ from __future__ import print_function
 # Given nums = [3,2,2,3], val = 3, Your function should return length = 2,[2,2]
 # Given nums = [0,1,2,2,3,0,4,2], val = 2, Your function should return length = 5,[0,1,3,0,4]
 
-
+# 这道题让我们移除一个数组中和给定值相同的数字，并返回新的数组的长度。
+# 我们只需要一个变量用来计数，然后遍历原数组，如果当前的值和给定值不同，我们就把当前值覆盖计数变量的位置，并将计数变量加1
 # 定义两个指针，一个从-1开始，一个从0开始，依次遍历。
 
 class Solution:
