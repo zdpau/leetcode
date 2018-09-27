@@ -37,24 +37,23 @@ class Solution2(object):
 
 # Time:  O(n)
 # Space: O(1)
-class Solution3(object):
-    """
-    :type nums: List[int]
-    :type k: int
-    :rtype: void Do not return anything, modify nums in-place instead.
-    """
-
+class Solution(object):
     def rotate(self, nums, k):
         k %= len(nums)
         self.reverse(nums, 0, len(nums))
+        print("1: %s" %nums)
         self.reverse(nums, 0, k)
+        print("2: %s" %nums)
         self.reverse(nums, k, len(nums))
+        print("3: %s" %nums)
 
     def reverse(self, nums, start, end):
         while start < end:
             nums[start], nums[end - 1] = nums[end - 1], nums[start]
             start += 1
             end -= 1
+            print(nums)
+            
 
 if __name__ == '__main__':
     nums = [1, 2, 3, 4, 5, 6, 7]
